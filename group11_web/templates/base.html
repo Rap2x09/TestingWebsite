@@ -1,0 +1,71 @@
+
+<!-- <header>
+	<a href="{% url 'home' %}"> Home </a> | <a href="{% url 'about' %}"> About</a>
+</header> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Group11 Web</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'maincss.css' %}">
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="top-nav">
+		<ul class="nav-menu">
+<!-- 			<li class="groupName">
+				GROUP 11<br>
+				CODE COMPARISON
+			</li> -->
+			<!-- style="margin-left: 5%; border-left: 1px solid #ffffff" -->
+			<li class="{% if active == 'home' %}active{% endif %}"><a href="{% url 'home' %}">
+				HOME
+			</a></li>
+			<li class="drop-menu"><a href="{% url 'problems'%}" class="drop-link">
+				PROBLEM SPECIFICATIONS<i class="fa fa-caret-down"></i>
+			</a>
+			<div class="submenu">
+				<a href="{% url 'new_problem' %}">UPLOAD PROBLEM</a>
+				<a href="#">SOLVE PROBLEM</a>
+				<a href="#">PROBLEMS ARCHIVE</a>
+				
+			</div></li>
+			<li class="{% if active == 'about' %}active{% endif %}"><a href="{% url 'about' %}">
+				ABOUT
+			</a></li>
+			<li><a href="#">
+				FAQS
+			</a></li>
+
+<!-- 			<li style="float:right"><a href="#">
+				LOGIN/REGISTER
+			</a></li> -->
+
+			<li class="drop-menu" style="float:right;"><a href="#" class="drop-link">
+				MY ACCOUNT &nbsp;<font size="4px">&#9660;</font>
+			</a>
+			<div class="submenu" style="text-align: center; border-right: 0px solid #009900">
+				<a href="#">SUBMITTED SOLUTIONS</a>
+				<a href="#">SUBMITTED PROBLEMS</a>
+				<a href="#">FAVOURITE PROBLEMS</a>
+				<a href="#" style="padding-right: 54px; padding-left: 53px;">LOG OUT</a>				
+			</div></li>			
+		</ul>		
+	</div>
+<div class="title"></div>
+<div class="content">
+<hr>
+
+{% block content %}
+{% endblock content %}
+
+</div>
+
+
+</div>
+
+</body>
+</html>

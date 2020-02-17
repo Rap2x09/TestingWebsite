@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>PROBLEMS</h1>
+
+<ul>
+	{% for problem in problemsList %}
+
+	<li>{{ problem }}</li>
+	<li>{{ problem.title }} </li>
+
+	{% endfor %}
+</ul>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>PROBLEMS</h1>
+
+<div class="problems-display">
+
+<table class="problems-table">
+	<tr style="font-size: 20px; border-bottom: 1px solid #a3a3c2">
+		<th>#</th>
+		<th>Title</th>
+		<th>End Date</th>
+		<th>Status</th>
+		<th>Solutions</th>
+	</tr>
+	{% for problem in problemsList %}
+	<tr class="problem-list">
+		<td style="text-align: center;">{{ forloop.counter }}</td>
+		<td width="70%" style="padding-left: 20px;"><a href="{% url 'problem_detail' problem.problemID %}">{{ problem.title }}</a></td>
+		<td align="center" width="10%">10/11/2022</td>
+		<td align="center" width="10%">Closed</td>
+		<td align="center"><a href="#">0</a></td>
+	</tr>
+	{% endfor %}
+
+</table>	
+
+</div>
+
+<!-- <ul>
+	{% for problem in problemsList %}
+
+	<li>{{ problem }}</li>
+	<li>{{ problem.title }} </li>
+
+	{% endfor %}
+</ul> -->
+
+{% endblock content %}
